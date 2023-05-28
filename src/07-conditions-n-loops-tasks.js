@@ -52,8 +52,15 @@ function getFizzBuzz(num) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  if (n === 0) return 1;
+  let answer = 1;
+  for (let i = 1; i <= n; i += 1) {
+    answer *= i;
+  }
+
+  return answer;
+/*   throw new Error('Not implemented'); */
 }
 
 
@@ -210,8 +217,29 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  let answer = '';
+
+  if (isStartIncluded) {
+    answer += '[';
+  } else {
+    answer += '(';
+  }
+
+  if (a > b) {
+    answer += `${b}, ${a}`;
+  } else {
+    answer += `${a}, ${b}`;
+  }
+
+  if (isEndIncluded) {
+    answer += ']';
+  } else {
+    answer += ')';
+  }
+
+  return answer;
+/*   throw new Error('Not implemented'); */
 }
 
 
